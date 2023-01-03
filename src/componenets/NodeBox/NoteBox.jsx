@@ -3,11 +3,10 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
-import { purple, blue, red, green, yellow, grey } from "@mui/material/colors";
+import { grey } from "@mui/material/colors";
 
 const NoteBox = (props) => {
-  console.log(props.note.bgColor);
-  const bgPrimary = purple[300];
+  console.log(props);
   return (
     <Card
       sx={{
@@ -17,9 +16,9 @@ const NoteBox = (props) => {
         fontFamily: "East Sea Dokdo, cursive",
         fontSize: "1.8rem",
         textAlign: "center",
-        color: grey[800],
+        color: grey[900],
         minHeight: "175px",
-        backgroundColor: bgPrimary, // purple[300],
+        backgroundColor: props.note.bgColor,
       }}
     >
       <CardContent sx={{ textAlign: "center" }}>
@@ -34,7 +33,7 @@ const NoteBox = (props) => {
           alignItems: "center",
         }}
       >
-        {props.note.description}
+        {props.note.note}
       </CardActions>
     </Card>
   );

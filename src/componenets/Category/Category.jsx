@@ -35,11 +35,11 @@ const Category = () => {
             onChange={handleChange}
           >
             <MenuItem value={"all"}>All Notes</MenuItem>
-            <MenuItem value={"puprle[500]"}>Purple Notes</MenuItem>
-            <MenuItem value={"blue[500]"}>Blue Notes</MenuItem>
-            <MenuItem value={"red[500]"}>Red Notes</MenuItem>
-            <MenuItem value={"green[500]"}>Green Notes</MenuItem>
-            <MenuItem value={"yellow[500]"}>Yellow Notes</MenuItem>
+            <MenuItem value={"#ab47bc"}>Purple Notes</MenuItem>
+            <MenuItem value={"#42a5f5"}>Blue Notes</MenuItem>
+            <MenuItem value={"#ef5350"}>Red Notes</MenuItem>
+            <MenuItem value={"#4caf50"}>Green Notes</MenuItem>
+            <MenuItem value={"#ffeb3b"}>Yellow Notes</MenuItem>
           </Select>
         </FormControl>
       </Box>

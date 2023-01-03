@@ -8,18 +8,18 @@ export const getLocalStorage = () => {
     : [
         {
           title: "React ÇAlış",
-          description: "Reack hooklara bakmalısın",
-          bgColor: "purple.A200",
+          note: "Reack hooklara bakmalısın",
+          bgColor: "#ab47bc",
         },
         {
           title: "Redux ÇAlış",
-          description: "Redux ile proje geliştirmelisin...",
-          bgColor: "blue[500]",
+          note: "Redux ile proje geliştirmelisin...",
+          bgColor: "#42a5f5",
         },
         {
           title: "Next.js ÇAlış",
-          description: "Next.js ile proje geliştirmelisin...",
-          bgColor: "red[500]",
+          note: "Next.js ile proje geliştirmelisin...",
+          bgColor: "#ef5350",
         },
       ];
 };
@@ -34,16 +34,35 @@ export const notesSlice = createSlice({
     notes: [...getLocalStorage()],
     activeColor: localStorage.getItem("activeColor")
       ? localStorage.getItem("activeColor")
-      : "purple[500]",
+      : "#ab47bc",
     filtered: "",
     activeCategory: localStorage.getItem("activeCategory")
       ? localStorage.getItem("activeCategory")
       : "all",
   },
   reducers: {
-    addNote: {},
+    addNote: {
+      reducer: (state, action) => {
+        state.notes.unshift(action.payload);
+        //console.log(action.payload);
+      },
+      prepare: (title, note, color) => {
+        return {
+          payload: {
+            id: nanoid(),
+            title,
+            note,
+            bgColor: color,
+          },
+        };
+      },
+    },
+    changeColor: (state, action) => {
+      state.activeColor = action.payload;
+      //localStorage.setItem("activeColor", action.payload);
+    },
   },
 });
 
-export const {} = notesSlice.actions;
+export const { addNote, changeColor } = notesSlice.actions;
 export default notesSlice.reducer;
