@@ -5,13 +5,22 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import TextField from "@mui/material/TextField";
-import { pink, blue, teal, green, lime } from "@mui/material/colors";
+import { purple, blue, red, green, yellow } from "@mui/material/colors";
 import DoneIcon from "@mui/icons-material/Done";
 
 const Form = () => {
   return (
     <Card sx={{ minWidth: "50%", mt: 5 }}>
       <CardContent sx={{ textAlign: "center" }}>
+        <TextField
+          label="Note Title"
+          id="outlined-size-small"
+          // defaultValue="Enter a Title"
+          size="small"
+          placeholder="Enter a Title"
+          sx={{ minWidth: "80%" }}
+        />
+
         <TextField
           id="standard-multiline-static"
           label="Enter your note here..."
@@ -39,7 +48,7 @@ const Form = () => {
         <Box
           sx={{
             borderRadius: "50%",
-            backgroundColor: pink[500],
+            backgroundColor: purple[500],
             width: 32,
             height: 32,
             mx: 2,
@@ -47,7 +56,7 @@ const Form = () => {
             alignItems: "center",
             justifyContent: "center",
             "&:hover": {
-              backgroundColor: pink[400],
+              backgroundColor: purple[400],
               opacity: [0.9, 0.8, 0.7],
             },
           }}
@@ -75,7 +84,7 @@ const Form = () => {
         <Box
           sx={{
             borderRadius: "50%",
-            backgroundColor: teal[500],
+            backgroundColor: red[500],
             width: 32,
             height: 32,
             mx: 2,
@@ -83,7 +92,7 @@ const Form = () => {
             alignItems: "center",
             justifyContent: "center",
             "&:hover": {
-              backgroundColor: teal[400],
+              backgroundColor: red[400],
               opacity: [0.9, 0.8, 0.7],
             },
           }}
@@ -111,7 +120,7 @@ const Form = () => {
         <Box
           sx={{
             borderRadius: "50%",
-            backgroundColor: lime[500],
+            backgroundColor: yellow[500],
             width: 32,
             height: 32,
             mx: 2,
@@ -119,7 +128,7 @@ const Form = () => {
             alignItems: "center",
             justifyContent: "center",
             "&:hover": {
-              backgroundColor: lime[400],
+              backgroundColor: yellow[400],
               opacity: [0.9, 0.8, 0.7],
             },
           }}
