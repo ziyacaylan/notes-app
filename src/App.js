@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import Box from "@mui/material/Box";
 
 import SearchBox from "./componenets/SearchBox";
@@ -10,7 +10,7 @@ import Footer from "./componenets/Footer";
 function App() {
   return (
     <div className="App">
-      <h2 style={{ color: "#4A5568" }}>NotesApp</h2>
+      <h2 className="app-title">NotesApp</h2>
       <Form />
       <Category />
       <Box

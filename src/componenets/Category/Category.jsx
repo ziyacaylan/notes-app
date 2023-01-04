@@ -6,12 +6,12 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
 
-const Category = () => {
-  const [age, setAge] = useState("");
+import { useSelector, useDispatch } from "react-redux";
+import { categorySelect } from "../../features/notes/notesSlice";
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+const Category = () => {
+  const category = useSelector((state) => state.notes.activeCategory);
+  const dispatch = useDispatch();
 
   return (
     <Box sx={{ width: "300px" }}>
@@ -30,9 +30,9 @@ const Category = () => {
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={age}
+            value={category}
             label="Category"
-            onChange={handleChange}
+            onChange={(e) => dispatch(categorySelect(e.target.value))}
           >
             <MenuItem value={"all"}>All Notes</MenuItem>
             <MenuItem value={"#ab47bc"}>Purple Notes</MenuItem>

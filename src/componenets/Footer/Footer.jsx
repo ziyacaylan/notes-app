@@ -1,5 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
 import Link from "@mui/material/Link";
 import { grey } from "@mui/material/colors";
 
@@ -7,15 +8,9 @@ const Footer = () => {
   return (
     <Box
       sx={{
-        // display: "flex",
-        // flexWrap: "wrap",
-        // justifyContent: "center",
-        position: "absolute",
-        bottom: "1rem",
-        typography: "body1",
-        "& > :not(style) + :not(style)": {
-          ml: 2,
-        },
+        position: "fixed",
+        bottom: "10px",
+        backgroundColor: "#323232",
       }}
     >
       <Link

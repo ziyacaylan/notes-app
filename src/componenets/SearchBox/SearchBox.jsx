@@ -4,6 +4,8 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import InputBase from "@mui/material/InputBase";
 
+import { useSelector, useDispatch } from "react-redux";
+import { filteredNotes } from "../../features/notes/notesSlice";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   // borderRadius: theme.shape.borderRadius,
@@ -49,6 +51,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const SearchBox = () => {
+  const filtered = useSelector((state) => state.notes.filtered);
+  const dispatch = useDispatch();
+
   return (
     <Box sx={{ my: 2, backgroundColor: "blueGrey[900]" }}>
       <Search>
@@ -58,6 +63,8 @@ const SearchBox = () => {
         <StyledInputBase
           placeholder="Search…"
           inputProps={{ "aria-label": "search" }}
+          value={filtered}
+          onChange={(event) => dispatch(filteredNotes(event.target.value))}
         />
       </Search>
     </Box>

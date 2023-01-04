@@ -19,21 +19,18 @@ const Form = () => {
   //console.log(activeColor);
 
   const handleSubmit = (event) => {
-    // console.log("title : ", title);
-    // console.log("note : ", note);
     title && note && dispatch(addNote(title, note, activeColor));
     setNote("");
     setTitle("");
   };
 
   return (
-    <Card sx={{ minWidth: "50%", mt: 5, minHeight: "285px" }}>
+    <Card sx={{ minWidth: "50%", mt: 2, minHeight: "285px" }}>
       <CardContent sx={{ textAlign: "center" }}>
         <Box component="form">
           <TextField
             label="Note Title"
             id="title"
-            // defaultValue="Enter a Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             size="small"
@@ -46,7 +43,6 @@ const Form = () => {
             label="Enter your note here..."
             multiline
             rows={4}
-            // defaultValue="Default Value"
             value={note}
             onChange={(e) => setNote(e.target.value)}
             variant="standard"
